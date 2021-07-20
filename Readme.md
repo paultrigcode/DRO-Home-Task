@@ -10,8 +10,9 @@ In order to run the code on your local machine , first you need to  create a vir
 
 First, clone the repository, go into the source code directory, create a virtualenv and install the required python libraries by running the following command:
 
+
 ```
-cd womens_health
+cd DRO-Home-Task-master
 virtualenv .
 source bin/activate
 pip install -r requirements.txt
@@ -33,7 +34,6 @@ python manage.py runserver
 ```
 
 ```
-
 ```
 make sure to run the above commands in the directory containg "manage.py" file
 
@@ -45,8 +45,9 @@ make sure to run the above commands in the directory containg "manage.py" file
 ## Usage
 Import The Insomia APi collcetion and Check The Insomnia DOC to see the list of available endpoints and how to use them
  #  The following API endpoints have been defined and can be tested on postman or insomnia as follows
- 1) POST: http://127.0.0.1:8000/womens-health/api/create-cycles/
- 2) GET : http://127.0.0.1:8000/womens-health/api/cycle_event/: param : date
+ 1)POST : http://127.0.0.1:8000/api/token/ (Authentication)
+ 2) POST: http://127.0.0.1:8000/womens-health/api/create-cycles/
+ 3) GET : http://127.0.0.1:8000/womens-health/api/cycle_event/: param : date
 
  Import the insomnia Collection in repo on postman or insomnia to see the list of available endpoints together with their descriptions on how
  they are to be called and used. you can also see the list of avialable endpoint by going to
@@ -58,6 +59,8 @@ Import The Insomia APi collcetion and Check The Insomnia DOC to see the list of 
 ```
 ```
 ```
+## How to use the API
 
+The API uses JWT for Authentication, so you need to use the superuser credentials you created above to authenticate the api on postman or insomnia. Then copy the access_token to you postman/insomnia environment to make subsequent authenticated request to the create_cycles and cycle_event end_point.
 
 
