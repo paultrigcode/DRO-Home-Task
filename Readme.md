@@ -63,4 +63,17 @@ Import The Insomia APi collcetion and Check The Insomnia DOC to see the list of 
 
 The API uses JWT for Authentication, so you need to use the superuser credentials you created above to authenticate the api on postman or insomnia. Then copy the access_token to your postman/insomnia environment to make subsequent authenticated request to the create_cycles and cycle_event end_point.
 
+The screenshot below shows The endpoints and body required and expected JSON response
+1) Authentication Endpoint
+<img width="1009" alt="Screenshot 2021-07-20 at 22 05 23" src="https://user-images.githubusercontent.com/27996978/126397214-9f7a3ed4-602f-4bac-9aee-199e420badfc.png">
+
+2) Create Cycle Endpoint
+<img width="1009" alt="Screenshot 2021-07-20 at 22 25 46" src="https://user-images.githubusercontent.com/27996978/126397556-bee390dc-fe18-4ab6-9e17-2d3332074b1f.png">
+
+3) Get Cycle Event For a spevific date in date range
+<img width="1042" alt="Screenshot 2021-07-20 at 22 27 41" src="https://user-images.githubusercontent.com/27996978/126397713-ec6e78cf-3cbf-4d2b-a119-154a3c2e90ad.png">
+
+For each request you make you need to pass the Bearer auth token in the header of each request as shown in the screenshot below
+<img width="1042" alt="Screenshot 2021-07-20 at 22 29 42" src="https://user-images.githubusercontent.com/27996978/126397942-803da8b9-f2e3-4b76-8231-a83ece3ca5db.png">
+Where ._auth_4 is the access_token gotten from the authentication endpoint and passed to your insomnia environment
 
