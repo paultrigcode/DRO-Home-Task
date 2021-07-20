@@ -61,6 +61,6 @@ Import The Insomia APi collcetion and Check The Insomnia DOC to see the list of 
 ```
 ## How to use the API
 
-The API uses JWT for Authentication, so you need to use the superuser credentials you created above to authenticate the api on postman or insomnia. Then copy the access_token to you postman/insomnia environment to make subsequent authenticated request to the create_cycles and cycle_event end_point.
+The API uses JWT for Authentication, so you need to use the superuser credentials you created above to authenticate the api on postman or insomnia. Then copy the access_token to your postman/insomnia environment to make subsequent authenticated request to the create_cycles and cycle_event end_point.
 
 
