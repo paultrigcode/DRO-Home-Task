@@ -6,6 +6,9 @@ from .serializers import CycleSettingSerializer
 from django.urls import reverse
 import json
 from rest_framework.test import APIClient
+from django.contrib.auth.models import User
+from rest_framework_simplejwt.tokens import RefreshToken
+import pytest
 
 
 
@@ -38,6 +41,16 @@ class CycleSettingTest(TestCase):
             'password': 'paultrig',
         }
     
+    @property
+    def bearer_token(self):
+        '''
+        creates a test user and Get refresh token for authentication
+        '''
+        user = User.objects.create(username = 'paultrigcode',password ='paultrig')
+        client = APIClient()
+        refresh = RefreshToken.for_user(user)
+        return {"HTTP_AUTHORIZATION":f'Bearer {refresh.access_token}'}
+    
     def test_cycle_settings_average(self):
         cycle_setting = CycleSetting.objects.get(cycle_average=25)
         self.assertEqual(
@@ -45,34 +58,13 @@ class CycleSettingTest(TestCase):
         self.assertEqual(
             cycle_setting.get_period_average(), 5)
 
-    # def test_create_cycle_setting(self):
-    #     client = Client()
-    #     header = {'Authorization':'Bearer '}
-    #     response1 = client.post(
-    #     			reverse('token_refresh'),
-    #     			data = json.dumps(self.user_credentials),
-    # 				content_type = 'application/json',
-    # 				)
-    #     print(response1.json())
-    #     response = client.post(
-    #         reverse('cycle_create-list'),
-    #         data=json.dumps(self.valid_payload),
-    #         content_type='application/json',
-    #         header = header
-    #     )
-    #     self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+    def test_valid_cycle_create_settings(self):
+       response = self.client.post(reverse('cycle_create-list'), data = self.valid_payload, **self.bearer_token)
+       self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_invalid_cycle_create_settings(self):
+        response = self.client.post(reverse('cycle_create-list'), data = self.invalid_payload, **self.bearer_token)
+        self.assertEqual(response.status_code, status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 
-    def test_create_cycle_setting(self):
-        client = APIClient()
-        client.login(username='paultrigcode', password='paultrig')
-        response = client.post('/cycle_create/', {
-            'last_period_date': '2020-06-20',
-            'cycle_average': 25,
-            'period_average': 5,
-            'start_date': '2020-07-25',
-            'end_date':'2021-07-25'
-        }, format='json')
-
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 

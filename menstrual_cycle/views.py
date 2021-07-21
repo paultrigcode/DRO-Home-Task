@@ -17,11 +17,11 @@ class CycleSettingViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.CycleSettingSerializer
     queryset = CycleSetting.objects.all()
     schema = {
-        'last_period_date': {'type': 'string'},
-        'cycle_average':{'type':'string'},
-        'period_average':{'type':'string'},
-        'start_date': {'type' : 'string'},
-        'end_date': {'type' : 'string'}
+        'last_period_date': {'type': 'string','empty': False},
+        'cycle_average':{'type':'string','empty': False},
+        'period_average':{'type':'string','empty': False},
+        'start_date': {'type' : 'string','empty': False},
+        'end_date': {'type' : 'string','empty': False}
     }
 
     
@@ -31,7 +31,6 @@ class CycleSettingViewSet(viewsets.ModelViewSet):
     def create(self,request):
         v = Validator(self.schema)
         v.require_all = True
-
         if not v.validate(request.data):
             return Response({
                 "errors": v.errors
