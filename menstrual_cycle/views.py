@@ -37,7 +37,7 @@ class CycleSettingViewSet(viewsets.ModelViewSet):
             }, status.HTTP_422_UNPROCESSABLE_ENTITY)
 
         if CycleSetting.objects.all():
-            return Response({'message':'cycle setting already exist, You can only update cycle setting'})
+            return Response({'message':'cycle setting already exist, You can only update cycle setting after creating one, please kindly update existing cycle settings from django admin'})
         delta = timedelta(days=30)
         start_date = request.data['start_date']
         end_date = request.data['end_date']
