@@ -28,11 +28,9 @@ python manage.py migrate
 ```
 Now run the command below to create superuser
 ```
-```
-
 python manage.py createsuperuser
 ```
-After creating superuser, now run the command below 
+After creating superuser, 
 ```
 ```
 python manage.py runserver
