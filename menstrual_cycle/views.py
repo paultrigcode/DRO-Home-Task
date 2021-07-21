@@ -37,9 +37,8 @@ class CycleSettingViewSet(viewsets.ModelViewSet):
             }, status.HTTP_422_UNPROCESSABLE_ENTITY)
 
         if CycleSetting.objects.all():
-        	return Response({'message':'cycle setting already exist, You can only update cycle setting'})
+            return Response({'message':'cycle setting already exist, You can only update cycle setting'})
         delta = timedelta(days=30)
-        date_dict = {}
         start_date = request.data['start_date']
         end_date = request.data['end_date']
         last_period_date = request.data['last_period_date']
@@ -108,7 +107,6 @@ class CycleEventViewSet(viewsets.ModelViewSet):
                     event_name.append(event)
 
                 date_dict = {}
-                # if not period_start_date < start_date_time_obj :
                 date_dict['period_start_date'] = period_start_date
                 date_dict['period_end_date'] = period_end_date
                 date_dict['ovulation_date'] = ovulation_date

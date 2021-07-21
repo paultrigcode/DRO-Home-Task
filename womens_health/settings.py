@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'menstrual_cycle',
     'rest_framework',
     'rest_framework.authtoken',
+    'drf_yasg',
+
 ]
 
 MIDDLEWARE = [
