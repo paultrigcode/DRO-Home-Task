@@ -44,7 +44,7 @@ make sure to run the above commands in the directory containg "manage.py" file
 
 
 
-Import The Insomia APi collcetion and Check The Insomnia DOC to see the list of available endpoints and how to use them
+Import The Insomia APi collection to see the list of available endpoints and how to use them. The insomnia json collection can be found in the repo base directory where manage.py file is.
  #  The following API endpoints have been defined and can be tested on postman or insomnia as follows
  1)POST : http://127.0.0.1:8000/api/token/ (Authentication)
  2) POST: http://127.0.0.1:8000/womens-health/api/create-cycles/
