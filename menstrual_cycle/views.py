@@ -63,9 +63,12 @@ class CycleEventViewSet(viewsets.ModelViewSet):
     queryset = CycleSetting.objects.all()
     def list(self,request):
         date = request.GET.get('date') 
-        date_obj =  datetime.strptime(date, '%Y-%m-%d').date()
+        try:
+            date_obj =  datetime.strptime(date, '%Y-%m-%d').date()
+        except ValueError:
+            return Response({'messgae':'date is invalid'},status.HTTP_400_BAD_REQUEST)
         data =[]
-        a = [] 
+        event_name = [] 
         cycle_setting = list(CycleSetting.objects.all().values())
         start_date_time_obj = cycle_setting[0]['start_date']
         end_date_time_obj = cycle_setting[0]['end_date']
@@ -84,25 +87,25 @@ class CycleEventViewSet(viewsets.ModelViewSet):
                 print(period_start_date,period_end_date,ovulation_date)
                 if fertility_window1 <= date_obj <= fertility_window2 and date_obj != ovulation_date:
                     event = "fertility_window"
-                    a.append(event)
+                    event_name.append(event)
                 elif date == str(period_start_date):
                     event = "Period_start_date"
-                    a.append(event)
+                    event_name.append(event)
                 elif date == str(period_end_date):
                     event = "Period_end_date"
-                    a.append(event)
+                    event_name.append(event)
                 elif date == str(ovulation_date):
                     event = "Ovulation_date"
-                    a.append(event)
+                    event_name.append(event)
                 elif period_end_date < date_obj < fertility_window1 and not period_end_date < date_obj < after_period_end:
                     event = "Pre_ovulationn_window"
-                    a.append(event)
+                    event_name.append(event)
                 elif fertility_window2 < date_obj < next_period_start_date:
                     event = "Post_ovulation_window"
-                    a.append(event)
+                    event_name.append(event)
                 elif period_end_date < date_obj < after_period_end and date_obj != ovulation_date:
                     event = "Pre_ovulation_window"
-                    a.append(event)
+                    event_name.append(event)
 
                 date_dict = {}
                 # if not period_start_date < start_date_time_obj :
@@ -115,8 +118,8 @@ class CycleEventViewSet(viewsets.ModelViewSet):
 
                 last_period_date_obj = period_end_date
                 # print(data)
-
-            return Response({'date':date,"event": ''.join(a)})	
+            data = ''.join(event_name)
+            return Response({'date':date,"event": data})	
         else:
-            return Response({'message':'date is not in the cycle range in cycle settings'})
+            return Response({'message':'date is not in the cycle range in cycle settings'},status.HTTP_400_BAD_REQUEST)
 
