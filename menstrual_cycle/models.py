@@ -8,3 +8,12 @@ class CycleSetting(models.Model):
 	period_average = models.IntegerField(default = 0)
 	start_date = models.DateField()
 	end_date = models.DateField()
+
+	def get_cycle_average(self):
+		return self.cycle_average
+
+	def get_period_average(self):
+		return self.period_average
+
+	def get_start_date(self):
+		return self.start_date

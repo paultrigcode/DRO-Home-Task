@@ -77,3 +77,9 @@ For each request you make you need to pass the Bearer auth token in the header o
 <img width="1042" alt="Screenshot 2021-07-20 at 22 29 42" src="https://user-images.githubusercontent.com/27996978/126397942-803da8b9-f2e3-4b76-8231-a83ece3ca5db.png">
 Where ._auth_4 is the access_token gotten from the authentication endpoint and passed to your insomnia environment
 
+
+## Test
+To run test run the command below in the directory where manage.py is
+```
+python manage.py test
+```
