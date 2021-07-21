@@ -28,9 +28,11 @@ python manage.py migrate
 ```
 Now run the command below to create superuser
 ```
+```
+
 python manage.py createsuperuser
 ```
-After creating superuser, 
+After creating superuser, now run the command below 
 ```
 ```
 python manage.py runserver
@@ -40,10 +42,6 @@ make sure to run the above commands in the directory containg "manage.py" file
 ##    Usage
 
 ```
-
-
-
-
 Import The Insomia APi collcetion and Check The Insomnia DOC to see the list of available endpoints and how to use them
  #  The following API endpoints have been defined and can be tested on postman or insomnia as follows
  1)POST : http://127.0.0.1:8000/api/token/ (Authentication)
