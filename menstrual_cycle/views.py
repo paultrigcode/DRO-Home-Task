@@ -81,7 +81,6 @@ class CycleEventViewSet(viewsets.ModelViewSet):
                 fertility_window1 = ovulation_date -timedelta(4)
                 fertility_window2 = ovulation_date+timedelta(4)
                 next_period_start_date = period_end_date+timedelta(25)
-                print(period_start_date,period_end_date,ovulation_date)
                 if fertility_window1 <= date_obj <= fertility_window2 and date_obj != ovulation_date:
                     event = "fertility_window"
                     event_name.append(event)

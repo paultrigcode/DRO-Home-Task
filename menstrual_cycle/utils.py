@@ -8,10 +8,8 @@ def calculate_number_of_cycles(last_period_date_obj,start_date_time_obj,end_date
         if period_start_date > end_date_time_obj:
             break
         period_end_date = period_start_date+timedelta(5)
-        print(period_start_date,period_end_date)
         if not period_start_date < start_date_time_obj :
             date_dict[period_start_date] = period_end_date
         last_period_date_obj = period_end_date
-    print(date_dict)
 
     return date_dict
