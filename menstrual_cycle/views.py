@@ -51,8 +51,6 @@ class CycleSettingViewSet(viewsets.ModelViewSet):
 
         return Response({"total_created_cycles": len(cycle_dict)})
 
-
-
     
 class CycleEventViewSet(viewsets.ModelViewSet):
     permission_classes = (
@@ -115,9 +113,8 @@ class CycleEventViewSet(viewsets.ModelViewSet):
                 data.append(date_dict)
 
                 last_period_date_obj = period_end_date
-                # print(data)
             data = ''.join(event_name)
             return Response({'date':date,"event": data})	
         else:
-            return Response({'message':'date is not in the cycle range in cycle settings'},status.HTTP_400_BAD_REQUEST)
+            return Response({'message':'date is not in the cycle range in cycle settings,date must be between start and end date specified in cycle setting'},status.HTTP_400_BAD_REQUEST)
 

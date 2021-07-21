@@ -38,9 +38,6 @@ python manage.py runserver
 make sure to run the above commands in the directory containg "manage.py" file
 
 
-## Process diagram
- ![Flow Diagram](Process_flow.png)
-
 
 ## Usage
 Import The Insomia APi collcetion and Check The Insomnia DOC to see the list of available endpoints and how to use them
@@ -79,7 +76,7 @@ Where ._auth_4 is the access_token gotten from the authentication endpoint and p
 
 
 ## Test
-To run test run the command below in the directory where manage.py is
+To run test, run the command below in the directory where manage.py is
 ```
 python manage.py test
 ```
