@@ -69,7 +69,7 @@ The screenshot below shows The endpoints and body required and expected JSON res
 2) Create Cycle Endpoint
 <img width="1009" alt="Screenshot 2021-07-20 at 22 25 46" src="https://user-images.githubusercontent.com/27996978/126397556-bee390dc-fe18-4ab6-9e17-2d3332074b1f.png">
 
-3) Get Cycle Event For a spevific date in date range
+3) Get Cycle Event For a specific date in date range
 <img width="1042" alt="Screenshot 2021-07-20 at 22 27 41" src="https://user-images.githubusercontent.com/27996978/126397713-ec6e78cf-3cbf-4d2b-a119-154a3c2e90ad.png">
 
 For each request you make you need to pass the Bearer auth token in the header of each request as shown in the screenshot below
