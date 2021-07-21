@@ -32,8 +32,8 @@ python manage.py createsuperuser
 ```
 After creating superuser, 
 ```
-python manage.py runserver
 ```
+python manage.py runserver
 
 ```
 make sure to run the above commands in the directory containg "manage.py" file
