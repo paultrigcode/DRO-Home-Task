@@ -6,8 +6,8 @@ from .views import CycleSettingViewSet,CycleEventViewSet
 
 # Create a router and register our viewsets with it.
 router = DefaultRouter()
-router.register(r'create-cycles',CycleSettingViewSet)
-router.register(r'cycle_event',CycleEventViewSet)
+router.register(r'create-cycles',CycleSettingViewSet, basename='cycle_create')
+router.register(r'cycle_event',CycleEventViewSet, basename='cycle_event')
 
 
 urlpatterns = [
