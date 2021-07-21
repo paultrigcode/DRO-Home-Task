@@ -52,7 +52,7 @@ Import The Insomia APi collcetion and Check The Insomnia DOC to see the list of 
  Import the insomnia Collection in repo on postman or insomnia to see the list of available endpoints together with their descriptions on how
  they are to be called and used. you can also see the list of avialable endpoint by going to
 
- [Link to Swagger DOC](http://127.0.0.1:8000redoc/)
+ [Link to Swagger DOC](http://127.0.0.1:8000/redoc/)
 
 
 
