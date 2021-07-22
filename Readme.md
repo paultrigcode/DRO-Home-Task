@@ -67,7 +67,7 @@ The screenshot below shows The endpoints and body required and expected JSON res
 <img width="1009" alt="Screenshot 2021-07-20 at 22 05 23" src="https://user-images.githubusercontent.com/27996978/126397214-9f7a3ed4-602f-4bac-9aee-199e420badfc.png">
 
 2) Create Cycle Endpoint
-<img width="1009" alt="Screenshot 2021-07-20 at 22 25 46" src="https://user-images.githubusercontent.com/27996978/126397556-bee390dc-fe18-4ab6-9e17-2d3332074b1f.png">
+<img width="1023" alt="Screenshot 2021-07-22 at 14 32 27" src="https://user-images.githubusercontent.com/27996978/126647697-c335ab45-f927-4ea1-9a3b-b0bc54d7f72e.png">
 
 3) Get Cycle Event For a specific date in date range
 <img width="1042" alt="Screenshot 2021-07-20 at 22 27 41" src="https://user-images.githubusercontent.com/27996978/126397713-ec6e78cf-3cbf-4d2b-a119-154a3c2e90ad.png">
